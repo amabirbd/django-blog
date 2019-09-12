@@ -1,15 +1,15 @@
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Article
 from django.contrib.auth.decorators import login_required
 from . import forms
+from .forms import CommentForm
 
 def article_list(request):
-    articles = Article.objects.all().order_by('date');
+    articles = Article.objects.all().order_by('date')
     return render(request, 'articles/article_list.html', { 'articles': articles })
 
 def article_detail(request, slug):
-    # return HttpResponse(slug)
     article = Article.objects.get(slug=slug)
     return render(request, 'articles/article_detail.html', { 'article': article })
 
@@ -26,3 +26,16 @@ def article_create(request):
     else:
         form = forms.CreateArticle()
     return render(request, 'articles/article_create.html', { 'form': form })
+
+def add_comment_to_article(request, pk):
+    article = get_object_or_404(Article, pk=pk)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.article = article
+            comment.save()
+            return redirect("articles:detail", slug=article.slug)
+    else:
+        form = CommentForm()
+    return render(request, 'articles/add_comment_to_article.html', {'form': form})

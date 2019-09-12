@@ -12,6 +12,7 @@ urlpatterns = [
     path('', article_views.article_list, name='home'),
     path('articles/', include('articles.urls')),
     path('accounts/', include('accounts.urls')),
+    path('auth/', include('allauth.urls')),
 ]
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

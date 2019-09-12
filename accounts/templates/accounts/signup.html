@@ -1,4 +1,6 @@
 {% extends 'base_layout.html' %}
+{% load socialaccount %}
+
 
 {% block content %}
     <h1>Signup</h1>
@@ -6,5 +8,7 @@
         {% csrf_token %}
         {{ form }}
         <input type="submit" value="Signup">
+        <a style="background-color: #3b5998; padding: 7px; border-radius: 4px;"  href="{% provider_login_url 'facebook' %}">Facebook Sign Up
+        </a>
     </form>
 {% endblock %}

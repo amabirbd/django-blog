@@ -9,4 +9,21 @@
         <p>{{ article.date }}</p>
     </div>
 </div>
+
+<br>
+<br>
+
+<a style="background-color: white; color:black; padding: 10px; border-radius: 4px; margin:5px" class="btn btn-default" href="{% url 'articles:add_comment_to_article' pk=article.pk %}">Add comment</a>
+
+{% for comment in article.comments.all %}
+    <div style="margin:20px;"  class="comment">
+        <div class="date">{{ comment.created_date }}</div>
+        <strong>{{ comment.user }}</strong>
+        <p>{{ comment.text|linebreaks }}</p>
+        <hr>
+    </div>
+{% empty %}
+    <p>No comments here yet :(</p>
+{% endfor %}
+
 {% endblock %}

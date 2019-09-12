@@ -1,6 +1,17 @@
 {% extends 'base_layout.html' %}
 {% block content %}
-        <h1>Articles List</h1>
+        <div class="categories">
+            <ul style="list-style: none; margin-left=100px">
+                <li style="display: inline-block; padding-left:20px; margin-left=100px;"><a href="#">Science</a></li>
+                <li style="display: inline-block; padding-left:20px; margin-left=100px"><a href="#">Technology</a></li>
+                <li style="display: inline-block; padding-left:20px; margin-left=100px"><a href="#">Arts</a></li>
+                <li style="display: inline-block; padding-left:20px; margin-left=100px"><a href="#">Philosophy</a></li>
+                <li style="display: inline-block; padding-left:20px; margin-left=100px"><a href="#">Entertainment</a></li>
+                <li style="display: inline-block; padding-left:20px; margin-left=100px"><a href="#">Travel</a></li>
+            </ul>
+        </div>
+
+        <h1>Articles</h1>
         <div class="articles">
         {% for article in articles %}
             <div class="article">
