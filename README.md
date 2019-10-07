@@ -7,6 +7,6 @@ install django version 2.1 with the command <br>
  Now in your terminal go to django-blog folder and type the command 
   "" . <br>
   <code> python manage.py runserver </code> <br>
-   it will the run the development server and you 
+   it will run the development server and you 
    can see your site at the address ""
  
