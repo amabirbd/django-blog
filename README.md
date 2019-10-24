@@ -1,12 +1,11 @@
 # django-blog
-django blog made using pythons django 2.1 . <br>
-to run this you need python and django in your system.
-download and install python if you don't have python.
-install django version 2.1 with the command <br>
-<code> pip install django 2.1 </code>  <br>
- Now in your terminal go to django-blog folder and type the command 
-  "" . <br>
-  <code> python manage.py runserver </code> <br>
-   it will run the development server and you 
-   can see your site at the address ""
- 
+Requirements:<br>
+<code>python <br> Django <br> django-crispy-form</code>  <br>
+# Installing:
+In terminal - <br>
+  <code>git clone https://github.com/amabirbd/django-blog.git</code> <br>
+  <code>cd django-blog</code> <br>
+  <code>python manage.py runserver</code> <br>
+  
+it will start the development server and you can visit the site at- <br>  
+<code>http://127.0.0.1:8000/</code>
