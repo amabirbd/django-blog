@@ -1,9 +1,10 @@
 {% extends 'base_layout.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
     <h1>New comment</h1>
     <form method="POST" class="article-form">{% csrf_token %}
-        {{ form.as_p }}
+        {{ form|crispy }}
         <button style="background-color: white; color:black; padding: 7px; border-radius: 4px" type="submit" class="save btn btn-default">Comment</button>
     </form>
 {% endblock %}
