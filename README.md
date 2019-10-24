@@ -1,6 +1,9 @@
 # django-blog
 Requirements:<br>
-<code>python <br> Django <br> django-crispy-form</code>  <br>
+<code>python <br>
+  Django <br> 
+  django-crispy-form</code> 
+  <br>
 # Installing:
 In terminal - <br>
   <code>git clone https://github.com/amabirbd/django-blog.git</code> <br>
